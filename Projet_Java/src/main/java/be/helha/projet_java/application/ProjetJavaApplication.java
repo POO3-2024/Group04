@@ -1,6 +1,5 @@
-package be.helha.projet_java;
+package be.helha.projet_java.application;
 
-import be.helha.projet_java.javafx.HelloFX;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

@@ -1,4 +1,4 @@
-package be.helha.projet_java.javafx;
+package be.helha.projet_java.application;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
