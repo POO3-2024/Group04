@@ -1,4 +1,4 @@
-package be.helha;
+package be.helha.group04;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
