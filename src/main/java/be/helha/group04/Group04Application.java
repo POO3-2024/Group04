@@ -1,13 +1,13 @@
-package be.helha.projet_java;
+package be.helha.group04;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProjetJavaApplication {
+public class Group04Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProjetJavaApplication.class, args);
+        SpringApplication.run(Group04Application.class, args);
         HelloFX.main(args);
     }
 
