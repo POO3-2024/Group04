@@ -1,13 +1,13 @@
-package be.helha;
+package be.helha.projet_java;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Groupe04ApplicationTests {
+class ProjetJavaApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }
