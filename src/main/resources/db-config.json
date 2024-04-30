@@ -1,0 +1,8 @@
+{
+  "datasource": {
+    "url": "jdbc:sqlite:C:/sqlite/poo3.db",
+    "driverClassName": "org.sqlite.JDBC",
+    "username": "",
+    "password": ""
+  }
+}
