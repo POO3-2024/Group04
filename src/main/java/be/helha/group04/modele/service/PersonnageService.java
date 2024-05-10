@@ -3,6 +3,7 @@ package be.helha.group04.modele.service;
 import be.helha.group04.modele.ConnectionDb;
 import be.helha.group04.personnage.Personnage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,12 +12,24 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * cette classe représente les CRUD (Create, Read, Update, Delete) d'un personnage.
+ * @author Clara
+ * @see be.helha.group04.modele.service
+ */
+@Service
 public class PersonnageService {
 
     @Autowired
+    /**
+     * objet qui permet la connexion à la db
+     */
     private ConnectionDb connectionDb;
 
-    // Créer une personne
+    /**
+     * fonction qui permet la création d'un personnage dans la database
+     * @param personnage - personnage est l'objet que l'on souhaite ajouté à la db
+     */
     public void createPersonne(Personnage personnage) {
         try (Connection conn = connectionDb.getConnection()) {
             String sql = "INSERT INTO personnage (Id, Nom,Pv, Mana) VALUES (?, ?, ?, ?)";
@@ -31,7 +44,11 @@ public class PersonnageService {
         }
     }
 
-    // Obtenir une personne par ID
+    /**
+     * fonction qui permet d'obtenir un personnage selon son id
+     * @param id - id du personnage voulu
+     * @return - retourne le personnage souhaité selon son id
+     */
     public Personnage getPersonnageById(Integer id) {
         Personnage personnage = null;
         try (Connection conn = connectionDb.getConnection()) {
@@ -52,7 +69,10 @@ public class PersonnageService {
         return personnage;
     }
 
-    // Obtenir toutes les personnes
+    /**
+     * fonction qui permet d'obtenir tout les personnages dans la db
+     * @return - qui retourne une liste de tout les personnages
+     */
     public List<Personnage> getAllPersonnages() {
         List<Personnage> personnages = new ArrayList<>();
         try (Connection conn = connectionDb.getConnection()) {
@@ -71,7 +91,10 @@ public class PersonnageService {
         return personnages;
     }
 
-    // Mettre à jour une personne
+    /**
+     * fonction qui permet de mettre à jour les données d'un personnage.
+     * @param personnage -,personnage est l'objet que l'on souhaite mettre à jour.
+     */
     public void updatePersonne(Personnage personnage) {
         try (Connection conn = connectionDb.getConnection()) {
             String sql = "UPDATE personne SET Nom = ? , Pv = ? , Mana = ? WHERE Id = ?";
@@ -86,7 +109,10 @@ public class PersonnageService {
         }
     }
 
-    // Supprimer une personne par ID
+    /**
+     * fonction qui permet de supprimer un personnage à l'aide de son id.
+     * @param id - id du personnage que l'on veut supprimer.
+     */
     public void deletePersonneById(Integer id) {
         try (Connection conn = connectionDb.getConnection()) {
             String sql = "DELETE FROM personne WHERE Id = ?";
