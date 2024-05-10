@@ -1,10 +1,10 @@
-package be.helha.group04.config;
+package be.helha.group04.modele;
 
 /**
  * Cette classe représente les propriétés du fichier db-config.json pour se connecter à la base de données
  *
  * @author Dedecker Bastien
- * @see be.helha.group04.config
+ * @see be.helha.group04.modele
  */
 public class DataSourceProperties {
 
