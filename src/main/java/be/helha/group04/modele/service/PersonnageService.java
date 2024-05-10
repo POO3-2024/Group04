@@ -60,8 +60,8 @@ public class PersonnageService {
                 personnage = new Personnage();
                 personnage.setId(rs.getInt("Id"));
                 personnage.setNom(rs.getString("Nom"));
-                personnage.setId(rs.getInt("Pv"));
-                personnage.setId(rs.getInt("Mana"));
+                personnage.setPv(rs.getInt("Pv"));
+                personnage.setMana(rs.getInt("Mana"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -83,6 +83,8 @@ public class PersonnageService {
                 Personnage personnage = new Personnage();
                 personnage.setId(rs.getInt("Id"));
                 personnage.setNom(rs.getString("Nom"));
+                personnage.setPv(rs.getInt("Pv"));
+                personnage.setMana(rs.getInt("Mana"));
                 personnages.add(personnage);
             }
         } catch (SQLException e) {
