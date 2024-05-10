@@ -1,4 +1,4 @@
-package be.helha.group04.config;
+package be.helha.group04.modele;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,7 +13,7 @@ import java.io.IOException;
  * Elle utilise Jackson pour lire le fichier JSON et instancier un objet `DataBaseProperties`
  *
  * @author Dedecker Bastien
- * @see be.helha.group04.config
+ * @see be.helha.group04.modele
  */
 @Configuration
 public class DataBaseConfig {

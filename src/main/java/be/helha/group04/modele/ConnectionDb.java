@@ -1,4 +1,4 @@
-package be.helha.group04.config;
+package be.helha.group04.modele;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,7 +12,7 @@ import java.sql.SQLException;
  *
  * Elle fournit une méthode pour obtenir une connexion à la base de données.
  * @author Dedecker Bastien
- * @see be.helha.group04.config
+ * @see be.helha.group04.modele
  */
 @Component
 public class ConnectionDb {
