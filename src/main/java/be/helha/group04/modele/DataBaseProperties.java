@@ -1,4 +1,4 @@
-package be.helha.group04.config;
+package be.helha.group04.modele;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Cette classe représente les propriétés de la base de données
  *
  * @author Dedecker Bastien
- * @see be.helha.group04.config
+ * @see be.helha.group04.modele
  */
 public class DataBaseProperties {
     /**
