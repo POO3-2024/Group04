@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ListView fx:id="list_id_arme" layoutX="14.0" layoutY="100.0" prefHeight="200.0" prefWidth="90.0" />
+      <ListView fx:id="list_nom_arme" layoutX="104.0" layoutY="100.0" prefHeight="200.0" prefWidth="161.0" />
+      <ListView fx:id="list_bouton_detail" layoutX="265.0" layoutY="100.0" prefHeight="200.0" prefWidth="105.0" />
+      <ListView fx:id="list_bouton_modifier" layoutX="370.0" layoutY="100.0" prefHeight="200.0" prefWidth="105.0" />
+      <ListView fx:id="list_bouton_supprimer" layoutX="475.0" layoutY="100.0" prefHeight="200.0" prefWidth="105.0" />
+      <Label layoutX="30.0" layoutY="74.0" text="Id du arme" textAlignment="CENTER" />
+      <Label layoutX="148.0" layoutY="74.0" text="Nom du arme" textAlignment="CENTER" />
+      <Button fx:id="FonctionControl" layoutX="274.0" layoutY="324.0" mnemonicParsing="false" text="Ajouter" />
+   </children>
+</AnchorPane>
