@@ -18,6 +18,12 @@ import java.sql.SQLException;
 public class ConnectionDb {
     @Autowired
     private DataBaseProperties databaseProperties;
+    private DataBaseConfig dataBaseConfig;
+
+    public ConnectionDb() {
+        this.dataBaseConfig = new DataBaseConfig();
+        this.databaseProperties = dataBaseConfig.dataBaseProperties();
+    }
 
     /**
      * Retourne une connexion à la base de données en utilisant les propriétés de connexion définies dans `DataBaseProperties`.

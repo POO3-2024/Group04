@@ -26,6 +26,10 @@ public class PersonnageService {
      */
     private ConnectionDb connectionDb;
 
+    public PersonnageService() {
+        this.connectionDb = new ConnectionDb();
+    }
+
     /**
      * fonction qui permet la création d'un personnage dans la database
      * @param personnage - personnage est l'objet que l'on souhaite ajouté à la db

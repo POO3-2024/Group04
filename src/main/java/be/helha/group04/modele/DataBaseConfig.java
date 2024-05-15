@@ -17,8 +17,12 @@ import java.io.IOException;
  */
 @Configuration
 public class DataBaseConfig {
-    @Value("${db.config.file}")
+    @Value("src/main/resources/db-config.json")
     private String dbConfigFile;
+
+    public DataBaseConfig() {
+        this.dbConfigFile = "src/main/resources/db-config.json";
+    }
 
     /**
      * Crée un bean `DataBaseProperties` à partir du fichier JSON spécifié par `db.config.file`.

@@ -15,6 +15,7 @@ public class DataBaseProperties {
     @JsonProperty("datasource")
     private DataSourceProperties dataSource;
 
+
     /**
      * Retourne les propriétés de la source de données
      *

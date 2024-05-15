@@ -14,6 +14,10 @@ public class PersonnageController {
     @Autowired
     private PersonnageService personnageService;
 
+    public PersonnageController() {
+        this.personnageService = new PersonnageService();
+    }
+
     //créer un nouveau personnage
     @PostMapping
     public Personnage createPersonnage(@RequestBody Personnage personnage){
