@@ -36,12 +36,28 @@ public class AcceuilViewController implements Initializable {
     }
 
     @FXML
-    public void showViewListePersonnage(){
+    public void showViewListePersonnage(Stage primaryStage){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/views/list-perso-view.fxml"));
+            primaryStage.setTitle("Changer de Vue");
+            primaryStage.setScene(new Scene(root, 600, 500));
+            primaryStage.show();
 
+        } catch(IOException e){
+            e.printStackTrace();
+        }
     }
     @FXML
-    public void showViewListeArme(){
-        //TO DO
+    public void showViewListeArme(Stage primaryStage){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/views/list-arme-view.fxml"));
+            primaryStage.setTitle("Changer de Vue");
+            primaryStage.setScene(new Scene(root, 600, 500));
+            primaryStage.show();
+
+        } catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
 

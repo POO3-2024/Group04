@@ -34,7 +34,7 @@ public class PersonnageController {
 
     //obtenir un personnage via son id
     @GetMapping("/{id}")
-    public Personnage getPersonnageById(@PathVariable("id") Integer id) {
+    public Personnage getPersonnageById(@PathVariable Integer id) {
         return personnageService.getPersonnageById(id);
     }
 
@@ -53,9 +53,10 @@ public class PersonnageController {
     //update les personnages
     @PutMapping("/{id}")
     public Personnage updatePersonnage(@PathVariable Integer id, @RequestBody Personnage PersonnageUpdated) {
-    PersonnageUpdated.setId(id);
-    personnageService.updatePersonnage(PersonnageUpdated);
-    return PersonnageUpdated;
+        PersonnageUpdated.setId(id);
+        personnageService.updatePersonnage(PersonnageUpdated);
+        return PersonnageUpdated;
+    }
 
     /**
      * Récupère un personnage par son ID
@@ -63,7 +64,7 @@ public class PersonnageController {
      * @return Le personnage correspondant à l'ID specifie
      */
     @GetMapping("/{id}")
-    public Personnage getPersonnage(@PathVariable("id") Integer id) {
+    public Personnage getPersonnage(@PathVariable Integer id) {
         return personnageService.getPersonnageById(id);
     }
 
