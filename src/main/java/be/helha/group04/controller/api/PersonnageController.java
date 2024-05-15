@@ -3,10 +3,7 @@ package be.helha.group04.controller.api;
 import be.helha.group04.modele.service.PersonnageService;
 import be.helha.group04.personnage.Personnage;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,6 +21,25 @@ public class PersonnageController {
     @Autowired
     private PersonnageService personnageService;
 
+    public PersonnageController() {
+        this.personnageService = new PersonnageService();
+    }
+
+    //créer un nouveau personnage
+    @PostMapping
+    public Personnage createPersonnage(@RequestBody Personnage personnage){
+        personnageService.createPersonnage(personnage);
+        return personnage;
+    }
+
+    //obtenir un personnage via son id
+    @GetMapping("/{id}")
+    public Personnage getPersonnageById(@PathVariable("id") Integer id) {
+        return personnageService.getPersonnageById(id);
+    }
+
+    //obtenir toutes les personnages
+
     /**
      * Récupère la liste de tous les personnages
      * @return Liste de tous les personnages
@@ -32,6 +48,14 @@ public class PersonnageController {
     public List<Personnage> getAllPersonnage() {
         return personnageService.getAllPersonnages();
     }
+
+
+    //update les personnages
+    @PutMapping("/{id}")
+    public Personnage updatePersonnage(@PathVariable Integer id, @RequestBody Personnage PersonnageUpdated) {
+    PersonnageUpdated.setId(id);
+    personnageService.updatePersonnage(PersonnageUpdated);
+    return PersonnageUpdated;
 
     /**
      * Récupère un personnage par son ID
@@ -42,4 +66,11 @@ public class PersonnageController {
     public Personnage getPersonnage(@PathVariable("id") Integer id) {
         return personnageService.getPersonnageById(id);
     }
+
+    //supprimer un personnage via son id
+    @DeleteMapping("/{id}")
+    public void deletePersonnageById(@PathVariable Integer id) {
+        personnageService.deletePersonnageById(id);
+    }
+
 }
