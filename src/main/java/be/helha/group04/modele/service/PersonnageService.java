@@ -32,7 +32,7 @@ public class PersonnageService {
      */
     public void createPersonnage(Personnage personnage) {
         try (Connection conn = connectionDb.getConnection()) {
-            String sql = "INSERT INTO personnage (Id, Nom,Pv, Mana) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO personnage (Nom,Pv, Mana) VALUES (?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, personnage.getId());
             pstmt.setString(2, personnage.getNom());
