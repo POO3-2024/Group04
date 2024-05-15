@@ -28,6 +28,11 @@ public class Arme {
         this.degats = degats;
     }
 
+    public Arme()
+    {
+
+    }
+
     /**
      * Getter pour l'identifiant de l'arme
      * @return l'identifiant de l'arme

@@ -26,6 +26,7 @@ public class ConnectionDb {
      * @throws SQLException si une erreur se produit lors de l'établissement de la connexion.
      */
     public Connection getConnection() throws SQLException {
+        //databaseProperties =new DataBaseProperties();
         DataSourceProperties dsProperties = databaseProperties.getDataSource();
         return DriverManager.getConnection(dsProperties.getUrl(), dsProperties.getUsername(), dsProperties.getPassword());
     }
