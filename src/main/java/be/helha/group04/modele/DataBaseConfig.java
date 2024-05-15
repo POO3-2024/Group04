@@ -17,7 +17,7 @@ import java.io.IOException;
  */
 @Configuration
 public class DataBaseConfig {
-    @Value("src/ main/ resources/ db-config. json")
+    @Value("${db.config.file}")
     private String dbConfigFile;
 
     /**
@@ -38,4 +38,5 @@ public class DataBaseConfig {
         }
         return properties;
     }
+
 }
