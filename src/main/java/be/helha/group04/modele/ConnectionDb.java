@@ -1,4 +1,4 @@
-package be.helha.group04.config;
+package be.helha.group04.modele;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,12 +12,18 @@ import java.sql.SQLException;
  *
  * Elle fournit une méthode pour obtenir une connexion à la base de données.
  * @author Dedecker Bastien
- * @see be.helha.group04.config
+ * @see be.helha.group04.modele
  */
 @Component
 public class ConnectionDb {
     @Autowired
     private DataBaseProperties databaseProperties;
+    private DataBaseConfig dataBaseConfig;
+
+    public ConnectionDb() {
+        this.dataBaseConfig = new DataBaseConfig();
+        this.databaseProperties = dataBaseConfig.dataBaseProperties();
+    }
 
     /**
      * Retourne une connexion à la base de données en utilisant les propriétés de connexion définies dans `DataBaseProperties`.
