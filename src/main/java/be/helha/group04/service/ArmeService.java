@@ -1,7 +1,7 @@
 package be.helha.group04.service;
 
 import be.helha.group04.arme.Arme;
-import be.helha.group04.config.ConnectionDb;
+import be.helha.group04.modele.ConnectionDb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
