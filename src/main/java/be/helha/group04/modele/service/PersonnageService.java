@@ -30,7 +30,7 @@ public class PersonnageService {
      * fonction qui permet la création d'un personnage dans la database
      * @param personnage - personnage est l'objet que l'on souhaite ajouté à la db
      */
-    public void createPersonne(Personnage personnage) {
+    public void createPersonnage(Personnage personnage) {
         try (Connection conn = connectionDb.getConnection()) {
             String sql = "INSERT INTO personnage (Id, Nom,Pv, Mana) VALUES (?, ?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -97,7 +97,7 @@ public class PersonnageService {
      * fonction qui permet de mettre à jour les données d'un personnage.
      * @param personnage -,personnage est l'objet que l'on souhaite mettre à jour.
      */
-    public void updatePersonne(Personnage personnage) {
+    public void updatePersonnage(Personnage personnage) {
         try (Connection conn = connectionDb.getConnection()) {
             String sql = "UPDATE personne SET Nom = ? , Pv = ? , Mana = ? WHERE Id = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -115,7 +115,7 @@ public class PersonnageService {
      * fonction qui permet de supprimer un personnage à l'aide de son id.
      * @param id - id du personnage que l'on veut supprimer.
      */
-    public void deletePersonneById(Integer id) {
+    public void deletePersonnageById(Integer id) {
         try (Connection conn = connectionDb.getConnection()) {
             String sql = "DELETE FROM personne WHERE Id = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
