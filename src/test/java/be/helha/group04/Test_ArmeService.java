@@ -71,4 +71,20 @@ public class Test_ArmeService {
         }
     }
 
+
+
+    /**
+     * Teste la recherche d'armes par leur identifiant dans la base de données
+     * Pour chaque arme dans la liste des armes, vérifie que l'arme récupérée
+     * depuis la base de données est égale à l'arme initiale
+     */
+    @Test
+    @Order(3)
+    public void testRechercherArme() {
+        for (Arme b : armes) {
+            Arme armeObtenue = armeService.getArmeById(b.getId());
+            assertEquals(armeObtenue, b);
+        }
+    }
+
 }
