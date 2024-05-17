@@ -22,6 +22,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Cette classe de test vérifie les fonctionnalités de la classe pour les méthodes de CRUD
  * ArmeService
+ * @author Hayriye Dogan
+ * @see be.helha.group04.service.ArmeService;
  */
 @TestMethodOrder(OrderAnnotation.class)
 public class Test_ArmeService {
@@ -113,5 +115,17 @@ public class Test_ArmeService {
         assertTrue(armeService.updateArme(arme));
         Arme armeObtenue = armeService.getArmeById(arme.getId());
         assertEquals(armeObtenue, arme);
+    }
+
+    /**
+     * Teste la suppression d'une arme de la base de données
+     * Pour chaque arme dans la liste des armes, vérifie que l'arme est supprimée avec succès
+     */
+    @Test
+    @Order(5)
+    public void testSupprimerArme() {
+        for (Arme b : armes) {
+            assertTrue(armeService.deleteArmeById(b.getId()));
+        }
     }
 }
