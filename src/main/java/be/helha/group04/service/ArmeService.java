@@ -58,4 +58,28 @@ public class ArmeService {
             }
             return false;
         }
+
+    /**
+     * Récupère une arme par son nom depuis la base de données
+     * @param id l'id de l'arme à récupérer
+     * @return l'objet Arme correspondant a l'id, ou null si aucune arme n'est trouvée
+     */
+    public Arme getArmeById(Integer id) {
+        Arme arme = null;
+        try (Connection conn = connectionDb.getConnection()) {
+            String sql = "SELECT * FROM Arme WHERE ID=?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                arme = new Arme();
+                arme.setId(rs.getInt("ID"));
+                arme.setNom(rs.getString("Nom"));
+                arme.setDegats(rs.getInt("Degats"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return arme;
+    }
 }
