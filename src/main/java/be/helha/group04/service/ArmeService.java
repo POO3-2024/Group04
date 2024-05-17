@@ -82,4 +82,28 @@ public class ArmeService {
         }
         return arme;
     }
+
+
+    /**
+     * Récupère la liste de toutes les armes depuis la base de données
+     * @return la liste des objets Arme
+     */
+    public List<Arme> getAllArmes() {
+        List<Arme> armes = new ArrayList<Arme>();
+        try (Connection conn = connectionDb.getConnection()) {
+            String sql = "SELECT * FROM Arme";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Arme arme = new Arme();
+                arme.setId(rs.getInt("ID"));
+                arme.setNom(rs.getString("Nom"));
+                arme.setDegats(rs.getInt("Degats"));
+                armes.add(arme);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return armes;
+    }
 }
