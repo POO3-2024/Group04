@@ -106,4 +106,24 @@ public class ArmeService {
         }
         return armes;
     }
+
+    /**
+     * Met à jour les informations d'une arme dans la base de données
+     * @param arme l'objet Arme contenant les nouvelles informations
+     * @return true si l'arme a été mise à jour avec succès, sinon false
+     */
+    public boolean updateArme(Arme arme) {
+        try (Connection conn = connectionDb.getConnection()) {
+            String sql = "UPDATE Arme SET Nom=?, Degats=? WHERE ID=?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, arme.getNom());
+            pstmt.setInt(2, arme.getDegats());
+            pstmt.setInt(3, arme.getId());
+            int result = pstmt.executeUpdate();
+            return result>0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }
