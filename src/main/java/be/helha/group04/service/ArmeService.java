@@ -60,7 +60,7 @@ public class ArmeService {
         }
 
     /**
-     * Récupère une arme par son nom depuis la base de données
+     * Récupère une arme par son id depuis la base de données
      * @param id l'id de l'arme à récupérer
      * @return l'objet Arme correspondant a l'id, ou null si aucune arme n'est trouvée
      */
@@ -119,6 +119,24 @@ public class ArmeService {
             pstmt.setString(1, arme.getNom());
             pstmt.setInt(2, arme.getDegats());
             pstmt.setInt(3, arme.getId());
+            int result = pstmt.executeUpdate();
+            return result>0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    /**
+     * Supprime une arme de la base de données par son id
+     * @param id id de l'arme à supprimer
+     * @return true si l'arme a été supprimée avec succès, sinon false
+     */
+    public boolean deleteArmeById(Integer id) {
+        try (Connection conn = connectionDb.getConnection()) {
+            String sql = "DELETE FROM Arme WHERE ID=?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, id);
             int result = pstmt.executeUpdate();
             return result>0;
         } catch (SQLException e) {
