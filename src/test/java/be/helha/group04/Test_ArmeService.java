@@ -98,4 +98,20 @@ public class Test_ArmeService {
         }
     }
 
+    /**
+     * Teste la modification d'une arme dans la base de données
+     * Récupère une arme depuis la liste des armes (aussi présente dans la base de données),
+     * la modifie en ajoutant un symbole "!" à son nom et en augmentant ses dégâts de 1,
+     * puis vérifie que la modification a été effectuée avec succès
+     */
+    @Test
+    @Order(4)
+    public void testModifierArme() {
+        Arme arme = armeService.getArmeById(armes.get(0).getId());
+        arme.setNom(arme.getNom() + "!");
+        arme.setDegats(arme.getDegats()+1);
+        assertTrue(armeService.updateArme(arme));
+        Arme armeObtenue = armeService.getArmeById(arme.getId());
+        assertEquals(armeObtenue, arme);
+    }
 }
