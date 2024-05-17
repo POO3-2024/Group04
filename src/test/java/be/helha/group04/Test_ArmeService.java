@@ -71,7 +71,18 @@ public class Test_ArmeService {
         }
     }
 
-
+    /**
+     * Teste la récupération de toutes les armes depuis la base de données
+     * Vérifie que la liste des armes récupérées est égale à la liste initiale des armes
+     */
+    @Test
+    @Order(2)
+    public void testListerArmes() {
+        List<Arme> armesObtenues = armeService.getAllArmes();
+        for (int i = 0; i < armes.size(); i++) {
+            assertEquals(armesObtenues.get(i), armes.get(i));
+        }
+    }
 
     /**
      * Teste la recherche d'armes par leur identifiant dans la base de données
