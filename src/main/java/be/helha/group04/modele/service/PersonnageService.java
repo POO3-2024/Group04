@@ -34,18 +34,23 @@ public class PersonnageService {
      * fonction qui permet la création d'un personnage dans la database
      * @param personnage - personnage est l'objet que l'on souhaite ajouté à la db
      */
-    public void createPersonnage(Personnage personnage) {
+    public boolean createPersonnage(Personnage personnage) {
         try (Connection conn = connectionDb.getConnection()) {
             String sql = "INSERT INTO personnage (Nom,Pv, Mana) VALUES (?, ?, ?)";
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, personnage.getId());
-            pstmt.setString(2, personnage.getNom());
-            pstmt.setInt(3, personnage.getPv());
-            pstmt.setInt(4, personnage.getMana());
-            pstmt.executeUpdate();
+            PreparedStatement pstmt = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+            pstmt.setString(1, personnage.getNom());
+            pstmt.setInt(2, personnage.getPv());
+            pstmt.setInt(3, personnage.getMana());
+            int result = pstmt.executeUpdate();
+            ResultSet resultSet = pstmt.getGeneratedKeys();
+            while(resultSet.next()) {
+                personnage.setId(resultSet.getInt(1));
+            }
+            return result > 0;
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return false;
     }
 
     /**
@@ -101,32 +106,37 @@ public class PersonnageService {
      * fonction qui permet de mettre à jour les données d'un personnage.
      * @param personnage -,personnage est l'objet que l'on souhaite mettre à jour.
      */
-    public void updatePersonnage(Personnage personnage) {
+    public boolean updatePersonnage(Personnage personnage) {
         try (Connection conn = connectionDb.getConnection()) {
-            String sql = "UPDATE personne SET Nom = ? , Pv = ? , Mana = ? WHERE Id = ?";
+            String sql = "UPDATE personnage SET Nom = ? , Pv = ? , Mana = ? WHERE Id = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, personnage.getNom());
             pstmt.setInt(2, personnage.getPv());
             pstmt.setInt(3, personnage.getMana());
             pstmt.setInt(4, personnage.getId());
-            pstmt.executeUpdate();
+            int result = pstmt.executeUpdate();
+            return result>0;
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return false;
     }
 
     /**
      * fonction qui permet de supprimer un personnage à l'aide de son id.
      * @param id - id du personnage que l'on veut supprimer.
      */
-    public void deletePersonnageById(Integer id) {
+    public boolean deletePersonnageById(Integer id) {
         try (Connection conn = connectionDb.getConnection()) {
-            String sql = "DELETE FROM personne WHERE Id = ?";
+            String sql = "DELETE FROM personnage WHERE Id = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, id);
-            pstmt.executeUpdate();
+            int result = pstmt.executeUpdate();
+            return result>0;
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return false;
     }
+
 }
