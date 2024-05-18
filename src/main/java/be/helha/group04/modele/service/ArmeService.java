@@ -18,7 +18,7 @@ import static java.sql.Statement.RETURN_GENERATED_KEYS;
 /**
  * Cette classe gère les opérations CRUD (Create, Read, Update, Delete) sur les objets Arme
  * @author Hayriye Dogan
- * @see be.helha.group04.service
+ * @see be.helha.group04.modele.service.ArmeService
  */
 @Service
 public class ArmeService {
