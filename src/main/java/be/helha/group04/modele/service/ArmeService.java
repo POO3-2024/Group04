@@ -1,4 +1,4 @@
-package be.helha.group04.service;
+package be.helha.group04.modele.service;
 
 import be.helha.group04.arme.Arme;
 import be.helha.group04.modele.ConnectionDb;

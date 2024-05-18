@@ -1,8 +1,7 @@
 package be.helha.group04;
 
 import be.helha.group04.arme.Arme;
-import be.helha.group04.service.ArmeService;
-import org.junit.jupiter.api.*;
+import be.helha.group04.modele.service.ArmeService;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -14,7 +13,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
 import static java.lang.Class.forName;
-import static java.sql.DriverManager.getDriver;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -23,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Cette classe de test vérifie les fonctionnalités de la classe pour les méthodes de CRUD
  * ArmeService
  * @author Hayriye Dogan
- * @see be.helha.group04.service.ArmeService;
+ * @see ArmeService ;
  */
 @TestMethodOrder(OrderAnnotation.class)
 public class Test_ArmeService {
