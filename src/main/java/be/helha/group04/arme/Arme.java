@@ -1,5 +1,7 @@
 package be.helha.group04.arme;
 
+import java.util.Objects;
+
 /**  La classe Arme représente une arme avec un identifiant, un nom et des dégats
  *  @author Hayriye Dogan
  *  @see be.helha.group04.arme
@@ -26,6 +28,11 @@ public class Arme {
     public Arme(String nom, int degats) {
         this.nom = nom;
         this.degats = degats;
+    }
+
+    public Arme()
+    {
+
     }
 
     /**
@@ -76,4 +83,20 @@ public class Arme {
         this.degats = degats;
     }
 
+    /**
+     * Vérifie si cet objet est égal à un autre objet
+     * Deux objets Arme sont considérés égaux s'ils ont le même identifiant,
+     * les mêmes dégâts et le même nom
+     * @param o l'objet à comparer avec cet objet Arme
+     * @return true si l'objet comparé est égal à cet objet Arme, sinon false
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || this.getClass() != o.getClass()) return false;
+        Arme arme = (Arme) o;
+        return (this.id == arme.id &&
+                this.degats == arme.degats &&
+                Objects.equals(this.nom, arme.nom));
+    }
 }
