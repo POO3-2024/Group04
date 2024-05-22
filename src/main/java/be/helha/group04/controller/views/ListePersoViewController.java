@@ -124,7 +124,24 @@ public class ListePersoViewController implements Initializable {
 
     @FXML
     public void SupprimerPersonnage(Event event, int id){
-        //TO DO
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/validation_sup_perso.fxml"));
+            Parent newRoot = loader.load();
+
+            //obtenir le contrôler associé
+            Validation_sup_persoController persoController = loader.getController();
+
+            //passer le paramètre au controler
+            persoController.recupId(id);
+
+            // Obtenir la scène actuelle
+            Stage stage = (Stage) ((Parent) event.getSource()).getScene().getWindow();
+
+            // Changer la scène
+            stage.setScene(new Scene(newRoot));
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
