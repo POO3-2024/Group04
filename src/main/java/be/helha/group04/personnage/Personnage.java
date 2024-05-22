@@ -1,5 +1,7 @@
     package be.helha.group04.personnage;
 
+    import java.util.Objects;
+
     /**
      * création de l'objet personnage
      * @author Clara
@@ -25,9 +27,23 @@
         private int mana ;
 
         /**
-         *
-         * @return
+         *constructeur d'un nouveau personnage
+         * @param nom le nom du personnage
+         * @param pv le nombre de pv qu'a ce personnage
+         * @param mana le nombre de mana qu'a ce personnage
          */
+        public Personnage(String nom, int pv, int mana) {
+            this.nom = nom;
+            this.pv = pv;
+            this.mana = mana;
+        }
+
+        /**
+         * controlleur de personnage sans argument
+         */
+        public Personnage() {
+        }
+
         /**
          * cette méthode retourne l'identifiant du personnage.
          * @return - l'identifiant du personnage.
@@ -91,4 +107,22 @@
         public void setMana(int mana) {
             this.mana = mana;
         }
+
+        /**
+         * indique si un object est égal à ce personnage
+         * deux personnages sont considérés égaux lorsqu'ils ont le même nom, le même pv et le même mana
+         * @param object l'object à comparé avec le personnage
+         * @return retourne true si l'object qui est comparé est égal à ce personnage, retourne faux si il ne l'est pas
+         */
+        @Override
+        public boolean equals(Object object){
+            if (this == object) return true;
+            if (object == null || this.getClass() != object.getClass()) return false;
+            Personnage personnage = (Personnage) object;
+            return( this.id == personnage.id &&
+                    this.pv == personnage.pv &&
+                    this.mana == personnage.mana &&
+                    Objects.equals(this.nom, personnage.nom));
+        }
+
     }
