@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.helha.group04.controller.views.Form_ajout_persoController">
+   <children>
+      <TextField fx:id="inputNom" layoutX="226.0" layoutY="144.0" />
+      <TextField fx:id="inputPv" layoutX="226.0" layoutY="207.0" />
+      <TextField fx:id="inputMana" layoutX="226.0" layoutY="268.0" />
+      <Button layoutX="226.0" layoutY="326.0" mnemonicParsing="false" onAction="#FonctionToDo" text="Confirmer" />
+      <Button layoutX="326.0" layoutY="326.0" mnemonicParsing="false" onAction="#FonctionTodDo" text="retour" />
+      <Label layoutX="239.0" layoutY="71.0" text="Ajouter un personnage" />
+      <Label layoutX="225.0" layoutY="119.0" text="Nom" />
+      <Label layoutX="225.0" layoutY="183.0" text="Pv" />
+      <Label layoutX="225.0" layoutY="245.0" text="Mana" />
+      <Label fx:id="errorMessage" layoutX="298.0" layoutY="301.0" prefHeight="17.0" prefWidth="0.0" />
+   </children>
+</AnchorPane>
