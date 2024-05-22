@@ -27,9 +27,23 @@
         private int mana ;
 
         /**
-         *
-         * @return
+         *constructeur d'un nouveau personnage
+         * @param nom le nom du personnage
+         * @param pv le nombre de pv qu'a ce personnage
+         * @param mana le nombre de mana qu'a ce personnage
          */
+        public Personnage(String nom, int pv, int mana) {
+            this.nom = nom;
+            this.pv = pv;
+            this.mana = mana;
+        }
+
+        /**
+         * controlleur de personnage sans argument
+         */
+        public Personnage() {
+        }
+
         /**
          * cette méthode retourne l'identifiant du personnage.
          * @return - l'identifiant du personnage.
