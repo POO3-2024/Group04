@@ -1,25 +1,29 @@
 package be.helha.group04.controller.views;
 
-import be.helha.group04.controller.api.PersonnageController;
 import be.helha.group04.personnage.Personnage;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+
+import java.awt.*;
+
+import java.util.List;
+
+import be.helha.group04.controller.api.PersonnageController;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import javafx.scene.control.Label;
 
 
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class ListePersoViewController implements Initializable {
@@ -114,7 +118,7 @@ public class ListePersoViewController implements Initializable {
     @FXML
     public void ajouterPersonnage(Event event){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/form_ajout_perso.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/form-ajout-perso.fxml"));
             Parent newRoot = loader.load();
 
             // Obtenir la scène actuelle
@@ -129,7 +133,7 @@ public class ListePersoViewController implements Initializable {
     @FXML
     public void retourAcceuil(Event event){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/acceuilo-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/acceuil-view.fxml"));
             Parent newRoot = loader.load();
 
             // Obtenir la scène actuelle
