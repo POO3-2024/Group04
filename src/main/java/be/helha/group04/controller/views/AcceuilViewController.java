@@ -1,6 +1,7 @@
 package be.helha.group04.controller.views;
 
 import be.helha.group04.controller.api.PersonnageController;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -36,12 +37,34 @@ public class AcceuilViewController implements Initializable {
     }
 
     @FXML
-    public void showViewListePersonnage(){
+    public void showViewListePersonnage(Event event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/list-perso-view.fxml"));
+            Parent newRoot = loader.load();
 
+            // Obtenir la scène actuelle
+            Stage stage = (Stage) ((Parent) event.getSource()).getScene().getWindow();
+
+            // Changer la scène
+            stage.setScene(new Scene(newRoot));
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
     }
     @FXML
-    public void showViewListeArme(){
-        //TO DO
+    public void showViewListeArme(Event event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/list-arme-view.fxml"));
+            Parent newRoot = loader.load();
+
+            // Obtenir la scène actuelle
+            Stage stage = (Stage) ((Parent) event.getSource()).getScene().getWindow();
+
+            // Changer la scène
+            stage.setScene(new Scene(newRoot));
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
