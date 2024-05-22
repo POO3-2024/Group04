@@ -81,8 +81,14 @@ public class ListePersoViewController implements Initializable {
     @FXML
     public void showViewDetailPerso(Event event , int id) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/detail-perso-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/detail_perso.fxml"));
             Parent newRoot = loader.load();
+
+            //obtenir le contrôler associé
+            DetailPersoController persoController = loader.getController();
+
+            //passer le paramètre au controler
+            persoController.setId_perso(id);
 
             // Obtenir la scène actuelle
             Stage stage = (Stage) ((Parent) event.getSource()).getScene().getWindow();
@@ -97,7 +103,7 @@ public class ListePersoViewController implements Initializable {
     @FXML
     public void showViewModifPerso(Event event, int id) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/detail-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/form_modif_perso.fxml"));
             Parent newRoot = loader.load();
 
             // Obtenir la scène actuelle
