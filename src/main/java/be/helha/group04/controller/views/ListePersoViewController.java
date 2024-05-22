@@ -105,10 +105,40 @@ public class ListePersoViewController implements Initializable {
             e.printStackTrace();
         }
     }
-    }
 
     @FXML
     public void SupprimerPersonnage(Event event, int id){
         //TO DO
+    }
+
+    @FXML
+    public void ajouterPersonnage(Event event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/form_ajout_perso.fxml"));
+            Parent newRoot = loader.load();
+
+            // Obtenir la scène actuelle
+            Stage stage = (Stage) ((Parent) event.getSource()).getScene().getWindow();
+
+            // Changer la scène
+            stage.setScene(new Scene(newRoot));
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    public void retourAcceuil(Event event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/acceuilo-view.fxml"));
+            Parent newRoot = loader.load();
+
+            // Obtenir la scène actuelle
+            Stage stage = (Stage) ((Parent) event.getSource()).getScene().getWindow();
+
+            // Changer la scène
+            stage.setScene(new Scene(newRoot));
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
     }
 }

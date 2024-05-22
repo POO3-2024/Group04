@@ -14,7 +14,7 @@
       <ListView fx:id="list_bouton_supprimer" layoutX="475.0" layoutY="100.0" prefHeight="200.0" prefWidth="105.0" />
       <Label layoutX="8.0" layoutY="74.0" text="Id du personnage" textAlignment="CENTER" />
       <Label layoutX="124.0" layoutY="74.0" text="Nom du personnage" textAlignment="CENTER" />
-      <Button layoutX="238.0" layoutY="323.0" mnemonicParsing="false" onAction="#FonctionControl" text="Ajouter" />
-      <Button layoutX="318.0" layoutY="323.0" mnemonicParsing="false" onAction="#FonctionControl" text="Retour" />
+      <Button layoutX="238.0" layoutY="323.0" mnemonicParsing="false" onAction="#ajouterPersonnage" text="Ajouter" />
+      <Button layoutX="318.0" layoutY="323.0" mnemonicParsing="false" onAction="#retourAcceuil" text="Retour" />
    </children>
 </AnchorPane>
