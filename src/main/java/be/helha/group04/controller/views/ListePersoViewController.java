@@ -92,11 +92,23 @@ public class ListePersoViewController implements Initializable {
 
     @FXML
     public void showViewModifPerso(Event event, int id) {
-        //TO DO
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/detail-view.fxml"));
+            Parent newRoot = loader.load();
+
+            // Obtenir la scène actuelle
+            Stage stage = (Stage) ((Parent) event.getSource()).getScene().getWindow();
+
+            // Changer la scène
+            stage.setScene(new Scene(newRoot));
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
     }
 
     @FXML
     public void SupprimerPersonnage(Event event, int id){
-        //TO DO 
+        //TO DO
     }
 }
