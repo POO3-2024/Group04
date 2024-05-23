@@ -12,8 +12,8 @@ public class HelloFX extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-            Parent root = FXMLLoader.load(getClass().getResource("/views/acceuil-view.fxml"));
-            primaryStage.setTitle("Changer de Vue");
+        Parent root = FXMLLoader.load(getClass().getResource("/views/acceuil-view.fxml"));
+        primaryStage.setTitle("Changer de Vue");
             primaryStage.setScene(new Scene(root, 600, 500));
             primaryStage.show();
         }
