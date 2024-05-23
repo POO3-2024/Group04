@@ -56,8 +56,8 @@ public class FormAjoutPersoController {
 
     /**
      * Affiche la vue de la liste des personnages. Cette méthode est appelée lorsqu'il y a un clic
-     * sur le bouton confirmer, ce qui confirme l'ajout du personnage et nous renvoie sur
-     * la vue de la liste des personnages.
+     * sur le bouton confirmer, ce qui confirme l'ajout du personnage et ajoute chaque information à la db
+     * et nous renvoie sur la vue de la liste des personnages.
      * Elle charge la vue FXML correspondante et remplace la scène actuelle par la nouvelle scène.
      * @param event est l'événement qui déclenche l'appel de cette méthode.
      */

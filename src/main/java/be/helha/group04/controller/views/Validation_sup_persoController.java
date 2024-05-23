@@ -12,6 +12,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * cette classe est le controller
+ */
 public class Validation_sup_persoController {
 
     @FXML

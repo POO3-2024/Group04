@@ -48,15 +48,15 @@ public class AcceuilViewController implements Initializable {
     }
 
     /**
-     Initialise la classe du contrôleur de l'acceuil. Elle définit le texte du nombrePersonnageLabel pour indiquer le nombre de personnages
-     présent dans la db, en utilisant la forme singulière ou plurielle en fonction du nombre de personnages.
-     @param location
-     L'emplacement utilisé pour résoudre les chemins relatifs pour l'objet racine, ou
-     {@code null} si l'emplacement n'est pas connu.
+     * Initialise la classe du contrôleur de l'acceuil. Elle définit le texte du nombrePersonnageLabel pour indiquer le nombre de personnages
+      *présent dans la db, en utilisant la forme singulière ou plurielle en fonction du nombre de personnages.
+     * @param location
+     * L'emplacement utilisé pour résoudre les chemins relatifs pour l'objet racine, ou
+     * {@code null} si l'emplacement n'est pas connu.
      *
      @param resources
-     Les ressources utilisées pour localiser l'objet racine, ou {@code null}
-     si l'objet racine n'a pas été localisé.
+     * Les ressources utilisées pour localiser l'objet racine, ou {@code null}
+      * si l'objet racine n'a pas été localisé.
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
