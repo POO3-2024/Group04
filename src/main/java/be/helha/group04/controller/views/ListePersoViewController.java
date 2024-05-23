@@ -231,7 +231,7 @@ public class ListePersoViewController implements Initializable {
             e.printStackTrace();
         }
     }
-    
+
     /**
      * Réaffiche la page de la liste des personnages, c'est un retour en arrière sur la page précedente
      * @param event est l'événement qui déclenche l'appel de cette méthode.
