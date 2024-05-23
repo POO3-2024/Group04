@@ -14,6 +14,8 @@ import java.io.IOException;
 
 /**
  * cette classe est le controller dédié à la page de validation de suppression du personnage
+ * @author Clara
+ * @see be.helha.group04.controller.views
  */
 public class Validation_sup_persoController {
 

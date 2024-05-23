@@ -82,8 +82,9 @@ public class ListePersoViewController implements Initializable {
     }
 
     /**
-     * initialisation des listes des labels et boutons et créations des labels et des boutons pour chaque personnages,
-     * et met les informations de chaque personnage dans les listesView correspondantes
+     * cette méthode prépare les listes d'éléments d'interface utilisateur
+     * (labels et boutons) pour chaque personnage et les ajoute aux ListView correspondantes,
+     * les boutons sont reliés aux id du personnage voulu
      @param location
      L'emplacement utilisé pour résoudre les chemins relatifs pour l'objet racine, ou
      {@code null} si l'emplacement n'est pas connu.
