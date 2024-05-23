@@ -26,27 +26,73 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * cette classe est le controller dédié à la page de la liste des personnages
+ * @author Clara
+ * @see be.helha.group04.controller.views
+ */
 public class ListePersoViewController implements Initializable {
 
+    /**
+     * une instance du personnageController
+     */
     private PersonnageController personnageController;
+    /**
+     * une liste des personnages
+     */
     private List<Personnage> listePersonnage;
+    /**
+     * une liste qui va contenir l'id de tous les personnages
+     */
     @FXML
     ListView<Label> list_id_perso;
+    /**
+     * une liste qui va contenir le nom de tous les personnages
+     */
     @FXML
     ListView<Label>  list_nom_perso;
+    /**
+     * une liste qui va contenir le bouton detail pour tous les personnages
+     * qui va afficher les détails du personnages
+     */
     @FXML
     ListView<Button>  list_bouton_detail;
+    /**
+     * une liste qui va contenir le bouton modifier pour tous les personnages
+     * où on va pouvoir modifier les informations du personnage
+     */
     @FXML
     ListView<Button>  list_bouton_modifier;
+    /**
+     * une liste qui va contenir le bouton supprimer pour tous les personnages
+     * où on pourra supprimer un personnage
+     */
     @FXML
     ListView<Button>  list_bouton_supprimer;
 
 
+    /**
+     * consctructeur de la classe ListePersoViewController
+     * initialise l'instance de personnageController
+     * et initialise la liste des personnages en prenant tout les personnages dans la db
+     */
     public ListePersoViewController() {
         this.personnageController = new PersonnageController();
         this.listePersonnage = this.personnageController.getAllPersonnage();
     }
 
+    /**
+     * cette méthode prépare les listes d'éléments d'interface utilisateur
+     * (labels et boutons) pour chaque personnage et les ajoute aux ListView correspondantes,
+     * les boutons sont reliés aux id du personnage voulu
+     @param location
+     L'emplacement utilisé pour résoudre les chemins relatifs pour l'objet racine, ou
+     {@code null} si l'emplacement n'est pas connu.
+     *
+     @param resources
+     Les ressources utilisées pour localiser l'objet racine, ou {@code null}
+     si l'objet racine n'a pas été localisé.
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ObservableList<Label> labelsId = FXCollections.observableArrayList();
@@ -78,6 +124,13 @@ public class ListePersoViewController implements Initializable {
         list_bouton_supprimer.setItems(boutonsSupp);
     }
 
+    /**
+     * Affiche la vue des détails des personnages. Cette méthode est appelée lorsqu'il y a un clic
+     * sur le bouton afficher les détails du personnage.
+     *   Elle charge la vue FXML correspondante et remplace la scène acceuil par la nouvelle scène.
+     * @param event est l'événement qui déclenche l'appel de cette méthode.
+     * @param id est l'id du personnage que l'on veut voir les détails
+     */
     @FXML
     public void showViewDetailPerso(Event event , int id) {
         try {
@@ -100,6 +153,13 @@ public class ListePersoViewController implements Initializable {
         }
     }
 
+    /**
+     * Affiche la vue des formulaire de modification des personnages. Cette méthode est appelée lorsqu'il y a un clic
+     * sur le bouton modifier du personnage.
+     * Elle charge la vue FXML correspondante et remplace la scène acceuil par la nouvelle scène.
+     * @param event est l'événement qui déclenche l'appel de cette méthode.
+     * @param id est l'id du personnage que l'on veut modifier
+     */
     @FXML
     public void showViewModifPerso(Event event, int id) {
         try {
@@ -122,6 +182,13 @@ public class ListePersoViewController implements Initializable {
         }
     }
 
+    /**
+     * Affiche la vue suppression des personnages. Cette méthode est appelée lorsqu'il y a un clic
+     * sur le bouton supprimer du personnage.
+     * Elle charge la vue FXML correspondante et remplace la scène acceuil par la nouvelle scène.
+     * @param event est l'événement qui déclenche l'appel de cette méthode.
+     * @param id est l'id du personnage que l'on veut supprimer
+     */
     @FXML
     public void SupprimerPersonnage(Event event, int id){
         try {
@@ -144,6 +211,12 @@ public class ListePersoViewController implements Initializable {
         }
     }
 
+    /**
+     * Affiche la vue de l'ajout des personnages. Cette méthode est appelée lorsqu'il y a un clic
+     * sur le bouton ajouter un personnage.
+     * Elle charge la vue FXML correspondante et remplace la scène acceuil par la nouvelle scène.
+     * @param event est l'événement qui déclenche l'appel de cette méthode.
+     */
     @FXML
     public void ajouterPersonnage(Event event){
         try {
@@ -159,6 +232,11 @@ public class ListePersoViewController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Réaffiche la page de la liste des personnages, c'est un retour en arrière sur la page précedente
+     * @param event est l'événement qui déclenche l'appel de cette méthode.
+     */
     @FXML
     public void retourAcceuil(Event event){
         try {
