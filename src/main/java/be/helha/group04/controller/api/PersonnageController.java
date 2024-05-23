@@ -86,7 +86,7 @@ public class PersonnageController {
         if(personnageService.updatePersonnage(PersonnageUpdated)){
             return PersonnageUpdated;
         } else {
-            throw new RuntimeException("Erreur lors de la mise à jour du peronnage avec l'ID: " + id);
+            throw new RuntimeException("Erreur lors de la mise à jour du personnage avec l'ID: " + id);
         }
     }
 

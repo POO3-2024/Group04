@@ -22,10 +22,14 @@ public class PersonnageService {
 
     @Autowired
     /**
-     * objet qui permet la connexion à la db
+     * objet qui permet la connexion à la base de données
      */
     private ConnectionDb connectionDb;
 
+    /**
+     * constructeur de la classe personnageService
+     * initialise la connexion à la base de données
+     */
     public PersonnageService() {
         this.connectionDb = new ConnectionDb();
     }
