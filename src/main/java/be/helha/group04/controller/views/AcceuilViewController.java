@@ -91,7 +91,7 @@ public class AcceuilViewController implements Initializable {
     /**
      * Affiche la vue de la liste des armes. Cette méthode est appelée lorsqu'il y a un clic
      * sur le bouton afficher arme.
-     * Elle charge la vue FXML correspondante et remplace la scène acceuil par la nouvelle scène.
+     * Elle charge la vue FXML correspondante et remplace la scène actuelle par la nouvelle scène.
      * @param event est l'événement qui déclenche l'appel de cette méthode.
      */
     @FXML

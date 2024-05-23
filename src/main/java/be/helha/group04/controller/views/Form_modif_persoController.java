@@ -76,7 +76,7 @@ public class Form_modif_persoController{
      * Affiche la vue de la liste des personnages. Cette méthode est appelée lorsqu'il y a un clic
      * sur le bouton confirmer, ce qui confirme la modification du personnage et nous renvoie sur
      * la vue de la liste des personnages.
-     * Elle charge la vue FXML correspondante et remplace la scène acceuil par la nouvelle scène.
+     * Elle charge la vue FXML correspondante et remplace la scène actuelle par la nouvelle scène.
      * @param event est l'événement qui déclenche l'appel de cette méthode.
      */
     @FXML
@@ -138,7 +138,7 @@ public class Form_modif_persoController{
     }
 
     /**
-     * Réaffiche la page de la liste des personnages, c'est un retour en arrière sur la page précedentes
+     * Réaffiche la page de la liste des personnages, c'est un retour en arrière sur la page précedente
      * @param event est l'événement qui déclenche l'appel de cette méthode.
      */
     @FXML

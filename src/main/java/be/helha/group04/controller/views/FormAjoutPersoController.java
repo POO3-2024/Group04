@@ -13,23 +13,54 @@ import javafx.scene.control.Label;
 
 import java.io.IOException;
 
+/**
+ * cette classe est le controller dédié à la page du formulaire d'ajout du personnage
+ * @author Clara
+ * @see be.helha.group04.controller.views
+ */
 public class FormAjoutPersoController {
 
+    /**
+     * une instance du personnageController
+     */
     private PersonnageController personnageController;
 
+    /**
+     * ce label va contenir le nom du personnage à modifier
+     */
     @FXML
     TextField inputNom;
+    /**
+     * ce label va contenir les pv du personnage à modifier
+     */
     @FXML
     TextField inputPv;
+    /**
+     * ce label va contenir la mana du personnage à modifier
+     */
     @FXML
     TextField inputMana;
+    /**
+     * ce label va contenir un message d'erreur si le formulaire est pas correctement rempli
+     */
     @FXML
     Label errorMessage;
 
+    /**
+     * consctructeur de la classe DetailPersoController
+     * initialise l'instance de personnageController
+     */
     public FormAjoutPersoController() {
         this.personnageController = new PersonnageController();
     }
 
+    /**
+     * Affiche la vue de la liste des personnages. Cette méthode est appelée lorsqu'il y a un clic
+     * sur le bouton confirmer, ce qui confirme l'ajout du personnage et nous renvoie sur
+     * la vue de la liste des personnages.
+     * Elle charge la vue FXML correspondante et remplace la scène actuelle par la nouvelle scène.
+     * @param event est l'événement qui déclenche l'appel de cette méthode.
+     */
     @FXML
     public void confirmerAjoutPerso(Event event){
         if(formulaireCorrect()){
@@ -52,6 +83,14 @@ public class FormAjoutPersoController {
             }
         }
     }
+
+    /**
+     * c'est une fonction qui s'assure que le formulaire n'est pas vide,
+     * rempli avec les bons types d'informations ainsi que s'assurer que
+     * les pv et mana ne soit pas inferieur à 0 et supérieur à leurs limites réspèctives
+     * (1000 pour les pv et 100 pour la mana)
+     * @return retourne faux si le formulaire n'est pas correct, retourne vrai si le formulaire est correct
+     */
 
     public boolean formulaireCorrect(){
         if (inputMana.getText().isEmpty() || inputPv.getText().isEmpty() || inputNom.getText().isEmpty()) {
@@ -81,6 +120,10 @@ public class FormAjoutPersoController {
         return true;
     }
 
+    /**
+     * Réaffiche la page de la liste des personnages, c'est un retour en arrière sur la page précedente
+     * @param event est l'événement qui déclenche l'appel de cette méthode.
+     */
     @FXML
     public void retourListPerso(Event event){
         try {

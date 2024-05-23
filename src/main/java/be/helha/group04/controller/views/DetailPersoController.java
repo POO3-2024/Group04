@@ -71,7 +71,7 @@ public class DetailPersoController {
 
 
     /**
-     * Réaffiche la page de détails des personnages, c'est un retour en arrière sur la page précedentes
+     * Réaffiche la page de détails des personnages, c'est un retour en arrière sur la page précedente
      * @param event est l'événement qui déclenche l'appel de cette méthode.
      */
     @FXML
