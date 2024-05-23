@@ -36,7 +36,7 @@ public class Test_PersonnageService {
     private static int nombrePersoAvanttest;
 
     /**
-     * Initialiser l'instance d'ArmeService avant tous les tests
+     * Initialiser l'instance de personnageService avant tous les tests
      * @throws SQLException lance une exception si une erreur de connexion à la base de données survient
      */
     @BeforeAll
@@ -57,7 +57,7 @@ public class Test_PersonnageService {
     }
 
     /**
-     * ajout d'un personnage à la base de données
+     * test d'ajout d'un personnage à la base de données
      */
     @Test
     @Order(1)
@@ -69,7 +69,7 @@ public class Test_PersonnageService {
     }
 
     /**
-     * Teste la récupération de toutes les armes depuis la base de données
+     * Teste la récupération de toutes les personnages depuis la base de données
      */
     @Test
     @Order(2)
@@ -81,13 +81,13 @@ public class Test_PersonnageService {
     }
 
     /**
-     * Teste la recherche d'armes par leur identifiant dans la base de données
-     * Pour chaque arme dans la liste des armes, vérifie que l'arme récupérée
-     * depuis la base de données est égale à l'arme initiale
+     * Teste la recherche de personnages par leur identifiant dans la base de données
+     * Pour chaque personnage dans la liste des personnages, vérifie que le personnage récupéré
+     * depuis la base de données est égal au personnage initial
      */
     @Test
     @Order(3)
-    public void testRechercherArme() {
+    public void testRechercherPersonnage() {
         for (Personnage Bastion : personnages) {
             Personnage personneObtenu = personnageService.getPersonnageById(Bastion.getId());
             assertEquals(personneObtenu, Bastion);
@@ -100,7 +100,7 @@ public class Test_PersonnageService {
      */
     @Test
     @Order(4)
-    public void testModifierArme() {
+    public void testModifierPersonnage() {
         Personnage personnage = personnageService.getPersonnageById(personnages.get(0).getId());
         personnage.setNom("Ben");
         personnage.setPv(200);
@@ -115,7 +115,7 @@ public class Test_PersonnageService {
      */
     @Test
     @Order(5)
-    public void testSupprimerArme() {
+    public void testSupprimerPersonnage() {
         for (Personnage Bastion : personnages) {
             assertTrue(personnageService.deletePersonnageById(Bastion.getId()));
         }
