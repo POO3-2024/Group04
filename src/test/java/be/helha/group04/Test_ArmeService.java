@@ -36,6 +36,11 @@ public class Test_ArmeService {
     private static List<Arme> armes;
 
     /**
+     * le nombre d'arme qu'il y a dans la db avant les test
+     */
+    private static int nombreArmeAvanttest;
+
+    /**
      * Initialise l'instance d'ArmeService avant tous les tests
      * @throws SQLException si une erreur de connexion à la base de données survient
      */
@@ -66,6 +71,7 @@ public class Test_ArmeService {
     @Test
     @Order(1)
     public void testAjouterArme(){
+        nombreArmeAvanttest = armeService.getAllArmes().size();
         for (Arme b : armes) {
             assertTrue(armeService.createArme(b));
         }
@@ -79,8 +85,8 @@ public class Test_ArmeService {
     @Order(2)
     public void testListerArmes() {
         List<Arme> armesObtenues = armeService.getAllArmes();
-        for (int i = 0; i < armes.size(); i++) {
-            assertEquals(armesObtenues.get(i), armes.get(i));
+        for (int i = nombreArmeAvanttest; i < armes.size(); i++) {
+            assertEquals(armesObtenues.get(i), armes.get(i - nombreArmeAvanttest));
         }
     }
 
