@@ -5,12 +5,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.helha.group04.controller.views.FormAjoutArmeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.helha.group04.controller.views.FormAjoutArmeController">
    <children>
       <TextField fx:id="inputNom" layoutX="226.0" layoutY="144.0" />
       <TextField fx:id="inputDegat" layoutX="226.0" layoutY="207.0" />
-      <Button layoutX="226.0" layoutY="281.0" mnemonicParsing="false" onAction="#FonctionToDo" text="Confirmer" />
-      <Button layoutX="326.0" layoutY="281.0" mnemonicParsing="false" onAction="#FonctionTodDo" text="retour" />
+      <Button layoutX="226.0" layoutY="281.0" mnemonicParsing="false" onAction="#ConfirmerAjout" text="Confirmer" />
+      <Button layoutX="344.0" layoutY="281.0" mnemonicParsing="false" onAction="#RetourList" text="Retour" />
       <Label layoutX="260.0" layoutY="71.0" text="Ajouter une arme" />
       <Label layoutX="225.0" layoutY="119.0" text="Nom" />
       <Label layoutX="225.0" layoutY="183.0" text="Dégât" />
