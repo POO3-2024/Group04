@@ -1,6 +1,8 @@
 package be.helha.group04.controller.views;
 
+import be.helha.group04.controller.api.ArmeController;
 import be.helha.group04.controller.api.PersonnageController;
+import be.helha.group04.modele.service.ArmeService;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,16 +42,24 @@ public class AcceuilViewController implements Initializable {
     private PersonnageController personnageController;
 
     /**
+     * une instance de armeController
+     */
+    private ArmeController armeController;
+
+    /**
      * constructeur de la classe acceuilViewController
      * initialise l'instance de personnageController
+     * initialise l'instance de armeController
      */
     public AcceuilViewController() {
+        ArmeService armeService = new ArmeService();
+        this.armeController = new ArmeController(armeService);
         this.personnageController = new PersonnageController();
     }
 
     /**
-     * Initialise la classe du contrôleur de l'acceuil. Elle définit le texte du nombrePersonnageLabel pour indiquer le nombre de personnages
-      *présent dans la db, en utilisant la forme singulière ou plurielle en fonction du nombre de personnages.
+     * Initialise la classe du contrôleur de l'acceuil. Elle définit le texte du nombrePersonnageLabel et nombreArmeLabel pour indiquer le nombre de personnages et d'armes
+      *présent dans la db, en utilisant la forme singulière ou plurielle en fonction du nombre de personnages et armes.
      * @param location
      * L'emplacement utilisé pour résoudre les chemins relatifs pour l'objet racine, ou
      * {@code null} si l'emplacement n'est pas connu.
@@ -63,6 +73,9 @@ public class AcceuilViewController implements Initializable {
         int nombrePersonnages =  personnageController.getAllPersonnage().size();
         String nombrePersonnagesString = String.valueOf(nombrePersonnages);
         nombrePersonnageLabel.setText(nombrePersonnages > 1 ? "il y a " + nombrePersonnagesString + " personnages" : "il y a " + nombrePersonnagesString + " personnage" );
+        int nombreArmes =  armeController.getAllArmes().size();
+        String nombreArmesString = String.valueOf(nombreArmes);
+        NombreArmeLabel.setText(nombreArmes > 1 ? "il y a " + nombreArmesString + " armes" : "il y a " + nombreArmesString + " arme" );
     }
 
     /**
