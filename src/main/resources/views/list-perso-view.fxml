@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.helha.group04.controller.views.ListePersoViewController">
+   <children>
+      <ListView fx:id="list_id_perso" fixedCellSize="30.0" layoutX="14.0" layoutY="100.0" prefHeight="200.0" prefWidth="90.0" />
+      <ListView fx:id="list_nom_perso" fixedCellSize="30.0" layoutX="104.0" layoutY="100.0" prefHeight="200.0" prefWidth="161.0" />
+      <ListView fx:id="list_bouton_detail" fixedCellSize="30.0" layoutX="265.0" layoutY="100.0" prefHeight="200.0" prefWidth="105.0" />
+      <ListView fx:id="list_bouton_modifier" fixedCellSize="30.0" layoutX="370.0" layoutY="100.0" prefHeight="200.0" prefWidth="105.0" />
+      <ListView fx:id="list_bouton_supprimer" fixedCellSize="30.0" layoutX="475.0" layoutY="100.0" prefHeight="200.0" prefWidth="105.0" />
+      <Label layoutX="8.0" layoutY="74.0" text="Id du personnage" textAlignment="CENTER" />
+      <Label layoutX="124.0" layoutY="74.0" text="Nom du personnage" textAlignment="CENTER" />
+      <Button layoutX="238.0" layoutY="323.0" mnemonicParsing="false" onAction="#ajouterPersonnage" text="Ajouter" />
+      <Button layoutX="318.0" layoutY="323.0" mnemonicParsing="false" onAction="#retourAcceuil" text="Retour" />
+   </children>
+</AnchorPane>
