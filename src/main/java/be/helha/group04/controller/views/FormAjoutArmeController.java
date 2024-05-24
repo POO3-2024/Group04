@@ -20,7 +20,7 @@ import java.io.IOException;
  * Cette classe gère la soumission du formulaire et
  * redirige vers la vue de la liste des armes en cas de soumission réussie
  * @author Hayriye Dogan
- * @see be.helha.group04.controller.views;
+ * @see be.helha.group04.controller.views
  */
 public class FormAjoutArmeController {
     /**
